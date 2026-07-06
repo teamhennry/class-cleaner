@@ -1,0 +1,8 @@
+{
+  "name": "우리반 청소 담당자 알리미",
+  "description": "우리반 학생들이 실시간으로 청소 구역과 요일별 담당을 확인하고, 청소 완료 상태 및 공지사항을 공유할 수 있는 실시간 청소 관리 앱입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

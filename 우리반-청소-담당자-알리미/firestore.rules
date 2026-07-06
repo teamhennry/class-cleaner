@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. Global Safety Net - Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128;
+    }
+
+    // 2. Config / Settings
+    match /config/settings {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // 3. Notices
+    match /notices/current {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // 4. Cleaning Zones
+    match /zones/{zoneId} {
+      allow read: if true;
+      allow write: if isValidId(zoneId);
+    }
+
+    // 5. Weekly Assignments
+    match /assignments/{assignmentId} {
+      allow read: if true;
+      allow write: if isValidId(assignmentId);
+    }
+
+    // 6. Daily Completions
+    match /completions/{completionId} {
+      allow read: if true;
+      allow write: if isValidId(completionId);
+    }
+  }
+}
