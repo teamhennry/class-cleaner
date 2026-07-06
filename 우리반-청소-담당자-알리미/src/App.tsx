@@ -539,7 +539,7 @@ export default function App() {
                 <div className="space-y-1 text-slate-600 text-xs leading-normal">
                   <p className="font-bold text-slate-700">비밀번호(인증번호)를 입력하세요.</p>
                   <p>교실 배정표를 편집하려면 권한 인증이 필요합니다.</p>
-                  <p className="text-indigo-600 font-semibold mt-1">💡 현재 PIN: <span className="underline font-bold font-mono">{teacherPin}</span></p>
+                  <p className="text-slate-400 text-[10px] mt-1">※ 최초 설정된 기본 비밀번호는 '1234'입니다.</p>
                 </div>
 
                 <div className="space-y-2">
